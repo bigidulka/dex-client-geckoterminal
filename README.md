@@ -1,32 +1,37 @@
-        # GeckoTerminal Web Client
+# GeckoTerminal Web Client
 
-        Python client for endpoints used by [https://www.geckoterminal.com](https://www.geckoterminal.com). The implementation is browser/reverse-engineered and mirrors the internal clients used in local DEX modules.
+Python client for endpoints used by [https://www.geckoterminal.com](https://www.geckoterminal.com). The implementation is browser/reverse-engineered and mirrors the internal clients used in local DEX modules.
 
-        ## Install
+## Educational Use
 
-        ```bash
-        pip install git+https://github.com/bigidulka/dex-client-geckoterminal.git
-        ```
+This project is published as part of an educational process for studying web/API clients and data access patterns. It is unofficial, not affiliated with or endorsed by the upstream service, and should be used responsibly according to the target site's terms and applicable law.
 
-        For local development:
 
-        ```bash
-        pip install -e '.[dev]'
-        pytest
-        ```
+## Install
 
-        ## Quick start
+```bash
+pip install git+https://github.com/bigidulka/dex-client-geckoterminal.git
+```
 
-        ```python
-        from dex_client_geckoterminal import GeckoTerminalClient
+For local development:
 
-        client = GeckoTerminalClient()
-        # call any method below; all methods return decoded JSON dict/list payloads
-        ```
+```bash
+pip install -e '.[dev]'
+pytest
+```
 
-        ## Methods
+## Quick start
 
-        - `networks`
+```python
+from dex_client_geckoterminal import GeckoTerminalClient
+
+client = GeckoTerminalClient()
+# call any method below; all methods return decoded JSON dict/list payloads
+```
+
+## Methods
+
+- `networks`
 - `trending_themes`
 - `trends`
 - `global_stats`
@@ -40,11 +45,11 @@
 - `token_ads`
 - `token_ads_track`
 
-        ## Endpoint inventory
+## Endpoint inventory
 
-        Extracted from existing Local clients and rechecked with browser-harness network capture where the site allowed capture.
+Extracted from existing Local clients and rechecked with browser-harness network capture where the site allowed capture.
 
-        - `['GET', '/networks', 'networks']`
+- `['GET', '/networks', 'networks']`
 - `['GET', '/trending_themes', 'trending themes']`
 - `['GET', '/trends', 'trends']`
 - `['GET', '/global_stats', 'global stats']`
@@ -58,11 +63,11 @@
 - `['GET', '/token_ads', 'token ads']`
 - `['POST', '/token_ads/track', 'token ads track']`
 
-        Full details: [`endpoint_inventory.json`](endpoint_inventory.json).
+Full details: [`endpoint_inventory.json`](endpoint_inventory.json).
 
-        ## Notes
+## Notes
 
-        - No official SDK is used.
-        - Some endpoints require Cloudflare/browser behavior; pass `use_curl_cffi=True` where available.
-        - Auth/session-only methods need your own cookies/tokens. Do not commit secrets.
-        - These clients are thin transport wrappers; normalize data in your application layer.
+- No official SDK is used.
+- Some endpoints require Cloudflare/browser behavior; pass `use_curl_cffi=True` where available.
+- Auth/session-only methods need your own cookies/tokens. Do not commit secrets.
+- These clients are thin transport wrappers; normalize data in your application layer.
