@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dex-client-geckoterminal"
+version = "0.1.0"
+description = "GeckoTerminal Web Client for browser-backed crypto market APIs."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Research Client Maintainers" }]
+dependencies = ["httpx>=0.27", "curl_cffi>=0.7"]
+keywords = ["crypto", "dex", "reverse-engineered", "geckoterminal"]
+classifiers = ["Programming Language :: Python :: 3", "Typing :: Typed"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://github.com/bigidulka/dex-client-geckoterminal"
+Documentation = "https://bigidulka.github.io/dex-client-geckoterminal/"
+Repository = "https://github.com/bigidulka/dex-client-geckoterminal"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dex_client_geckoterminal"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

@@ -1,0 +1,149 @@
+{
+  "client": "geckoterminal",
+  "title": "GeckoTerminal Web Client",
+  "base_url": "https://app.geckoterminal.com/api/p1",
+  "auth": "browser headers",
+  "endpoints": [
+    [
+      "GET",
+      "/networks",
+      "networks"
+    ],
+    [
+      "GET",
+      "/trending_themes",
+      "trending themes"
+    ],
+    [
+      "GET",
+      "/trends",
+      "trends"
+    ],
+    [
+      "GET",
+      "/global_stats",
+      "global stats"
+    ],
+    [
+      "GET",
+      "/{network}/pools",
+      "pools"
+    ],
+    [
+      "GET",
+      "/{network}/pools/{address}",
+      "pool detail"
+    ],
+    [
+      "GET",
+      "/{network}/pools/{address}/token_info_snapshots",
+      "token snapshots"
+    ],
+    [
+      "GET",
+      "/{network}/pools/{address}/related_pools",
+      "related pools"
+    ],
+    [
+      "GET",
+      "/{network}/pools/{address}/sender_swaps",
+      "sender swaps"
+    ],
+    [
+      "GET",
+      "/{network}/pools/{address}/swaps",
+      "swaps"
+    ],
+    [
+      "GET",
+      "/candlesticks/{base_token_id}/{pool_id}",
+      "candlesticks"
+    ],
+    [
+      "GET",
+      "/token_ads",
+      "token ads"
+    ],
+    [
+      "POST",
+      "/token_ads/track",
+      "token ads track"
+    ]
+  ],
+  "browser_capture": {
+    "geckoterminal_eth": [
+      {
+        "method": "GET",
+        "status": 200,
+        "url": "https://app.geckoterminal.com/api/p1/eth/pools?page=1&items=20&sort=-6h_trend_score&include=tokens&fields%5Bpool%5D=address%2Cbase_token_id%2Cprice_percent_change%2Cpool_created_at%2Ctokens&fields%5Btoken%5D=symbol%2Cimage_url",
+        "postData": ""
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "url": "https://app.geckoterminal.com/api/p1/networks?fields%5Bnetwork%5D=name%2Cidentifier%2Cimage_url%2Cis_new&show_for_sidebar=1&sort=-24h_volume",
+        "postData": ""
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "url": "https://app.geckoterminal.com/api/p1/eth/pools/0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640/token_info_snapshots",
+        "postData": ""
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "url": "https://app.geckoterminal.com/api/p1/eth/pools/0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640?include=dex%2Cdex.network.explorers%2Cdex_link_services%2Cnetwork_link_services%2Cpairs%2Ctoken_link_services%2Ctag_link_services%2Ctokens.token_security_metric%2Ctokens.token_developer_detail%2Ctokens.tags%2Cpool_locked_liquidities%2Claunchpad_dex&base_token=0",
+        "postData": ""
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "url": "https://www.geckoterminal.com/api/auth/getCookie",
+        "postData": ""
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "url": "https://app.geckoterminal.com/api/p1/eth/pools/0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640/related_pools?include=dex.network%2Ctokens&fields%5Brelated_pool%5D=address%2Cpool_fee%2Ctoken_id%2Cliquidity%2Cvolume_in_usd_24h%2Ctokens%2Cdex&fields%5Btoken%5D=symbol&fields%5Bdex%5D=network%2Cname%2Cimage_url%2Cnetwork&fields%5Bnetwork%5D=identifier",
+        "postData": ""
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "url": "https://app.geckoterminal.com/api/p1/eth/pools/0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640/swaps?include=from_token%2Cto_token&pair_id=97292&page%5Bafter%5D=1781390337&inverted=0",
+        "postData": ""
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "url": "https://app.geckoterminal.com/api/p1/candlesticks/147971598/97292?resolution=15&from_timestamp=1781120398&to_timestamp=1781390398&for_update=false&count_back=301&currency=usd&is_inverted=false",
+        "postData": ""
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "url": "https://app.geckoterminal.com/api/p1/token_ads?country=RU",
+        "postData": ""
+      },
+      {
+        "method": "OPTIONS",
+        "status": 200,
+        "url": "https://app.geckoterminal.com/api/p1/token_ads/track",
+        "postData": ""
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://app.geckoterminal.com/api/p1/token_ads/track",
+        "postData": "{\"data\":{\"type\":\"token_ad\",\"attributes\":{\"type\":\"impression\",\"impression_id\":\"1e37ce89-d09d-41f4-bf7c-7b2e96139c9d\"}}}"
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "url": "https://app.geckoterminal.com/api/p1/candlesticks/147971598/97292?resolution=15&from_timestamp=1781094600&to_timestamp=1781119800&for_update=false&count_back=28&currency=usd&is_inverted=false",
+        "postData": ""
+      }
+    ]
+  }
+}
